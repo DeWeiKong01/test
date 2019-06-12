@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue练习10</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my-conponent message="[1,2,3]"></my-conponent>
+        <my-conponent :message="[1,2,3]"></my-conponent>
+    </div>
+</body>
+<script>
+    Vue.component ('my-conponent',{
+        props: ['message'],
+        template: "<div>{{ message.length }}</div>",
+    })
+    var app = new Vue({
+        el: "#app"
+    })
+</script>
+</html>
